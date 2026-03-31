@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html>
 <%- include('partials/head.ejs') %>
-<body>
-    <h1>Countries</h1>
-    <%- include('partials/nav.ejs') %>
+<body class="countryPage">
+    <header>
+        <h1>Countries</h1>
+        <hr>
+    </header>
+    <nav>
+        <a href="/"> Home</a>
+    <hr>
+    </nav>
+    <main>
+        
+        <%- include('partials/nav.ejs', { countries }) %>
 
-    <h2><%= countryInfo.name.common %> </h2>
+        <div id="container">
+            <h1><%= countryInfo.name.common %> </h2>
+            
+            <% if (countryInfo.name.common != countryInfo.name.official) { %>
+                <h4><%= countryInfo.name.official %> </h4>
+            <% } %>
+
+            <br>
+
+            <img src="<%= countryInfo.flags.png %>">
+
+            <br><br>
+
+            <div id="info">
+                <strong>Capital:</strong> <%= countryInfo.capital %> <br>
+                <strong>Area:</strong> <%= countryInfo.area.toLocaleString() %> square kilometers <br>
+                <strong>Population:</strong> <%= countryInfo.population.toLocaleString() %> <br>
+                <strong>Continent:</strong> <%= countryInfo.continents.join(', ') %> <br>
+                <strong>Languages:</strong> <%= Object.values(countryInfo.languages).join(', ') %> <br>
+                <strong>Currencies:</strong> <%= Object.values(countryInfo.currencies).map(c => c.name).join(', ') %> <br>
+                <!-- google wouldnt let me embed a map -->
+                <strong>Map:</strong> <a href="<%= countryInfo.maps.googleMaps %>" target="_blank">View on Google Maps</a> <br> 
+            </div>
+        </div>
+        
+
+    </main>
+
+    <br>
 
     <%- include('partials/footer.ejs') %>
 </body>

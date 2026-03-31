@@ -1,12 +1,5 @@
-<nav><a href="/"> Home</a>
-    <!-- <a href="/planet?planetName=Mercury"> Mercury</a>
-    <a href="/planet?planetName=Venus"> Venus</a>
-    <a href="/planet?planetName=Earth"> Earth</a>
-    <a href="/planet?planetName=Mars"> Mars</a>
-    <a href="/planet?planetName=Jupiter"> Jupiter</a>
-    <a href="/planet?planetName=Saturn"> Saturn</a>
-    <a href="/planet?planetName=Uranus"> Uranus</a>
-    <a href="/planet?planetName=Neptune"> Neptune</a>
-    <a href="/planet?planetName=Pluto"> Pluto</a>
-    <a href="/nasa"> NASA</a> -->
-</nav>
+<ul id="countryList"> 
+    <% for (let country of countries) { %>
+    <li> <a href="/country?code=<%= country.cca3 %>"> <img src="<%= country.flags.png %>"> <%= country.name.common %> </a> </li>
+    <% } %>
+</ul>

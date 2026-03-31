@@ -7,7 +7,7 @@ app.use(express.static("public"));
 app.get('/', async (req, res) => {
    const countries = await getAll(['name', 'flags', 'cca3']);
    countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
-   console.log(countries);
+   //console.log(countries);
    res.render("index", { countries })
 });
 
@@ -18,14 +18,17 @@ app.get('/country', async (req, res) => {
 
    let countryCode = req.query.code;
 
-   let url = `https://restcountries.com/v3.1/alpha/${countryCode}?fields=name,flags,area,capital,population`; // max 10 fields
+   let url = `https://restcountries.com/v3.1/alpha/${countryCode}?fields=name,flags,area,capital,population,continents,maps,languages,currencies`; // max 10 fields (9/10)
    let response = await fetch(url);
    let countryInfo = await response.json();
 
-   console.log(url);
+   const countries = await getAll(['name', 'flags', 'cca3']);
+   countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
+
+   //console.log(url);
    console.log(countryInfo);
 
-   res.render('country', { countryInfo, countryCode });
+   res.render('country', { countryInfo, countryCode, countries });
 });
 
 app.listen(3000, () => {

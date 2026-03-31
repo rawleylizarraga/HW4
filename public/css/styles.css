@@ -1,7 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+body {
+    background-color: seashell;
+    text-align: center;
+    margin: 0;
+
+    font-size: 1.4em;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #countryList {
     height: 700px;
     overflow-y: auto;
     border: 1px solid black;
     padding: 0;
-    margin: 0;
+
+    width: fit-content;
+    text-align: start;
+    margin: auto;
+    background-color: rgb(245, 245, 245);
+}
+
+#countryList img {
+    height: 1em;
+    width: 2em;
+    object-fit: contain;
+}
+
+.countryPage img {
+    height: 200px;
+    width: 400px;
+    object-fit: contain;
+}
+
+#countryList li {
+    padding: 2px;
+}
+
+#countryList li:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+footer {
+    font-size: .8em;
+    color: gray;
+    background-color: #dddddd;
+}
+
+footer hr {
+    margin: auto;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+#info {
+    text-align: start;
+    margin: auto;
+    width: fit-content;
+}
+
+.countryPage main {
+    display: flex;
+}
+
+.countryPage #countryList {
+    margin: 30px;
+    position: absolute;
+}
+
+#container {
+    margin: 0 auto;
+    width: fit-content;
 }

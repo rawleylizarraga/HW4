@@ -2,15 +2,21 @@
 <html>
 <%- include('partials/head.ejs') %>
 <body>
-    <h1>Countries</h1>
-
+    <header>
+        <h1>Countries</h1>
+        <hr>
+    </header>
+    
     <br>
 
-    <ul id="countryList"> 
-        <% for (let country of countries) { %>
-          <li> <a href="/country?code=<%= country.cca3 %>"> <img src="<%= country.flags.png %>" height="10" width="20"> <%= country.name.common %> </a> </li>
-        <% } %>
-    </ul>
+    <main>
+
+        <%- include('partials/nav.ejs', { countries }) %>
+
+        <br>
+        
+
+    </main>
 
     <%- include('partials/footer.ejs') %>
     
