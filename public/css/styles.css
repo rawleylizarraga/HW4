@@ -75,6 +75,7 @@ h1 {
     text-align: start;
     margin: auto;
     width: fit-content;
+    max-width: 50%;
 }
 
 .countryPage main {
