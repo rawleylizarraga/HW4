@@ -75,7 +75,6 @@ h1 {
     text-align: start;
     margin: auto;
     width: fit-content;
-    max-width: 50%;
 }
 
 .countryPage main {
@@ -90,4 +89,5 @@ h1 {
 #container {
     margin: 0 auto;
     width: fit-content;
+    max-width: 40%;
 }
